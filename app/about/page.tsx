@@ -47,8 +47,8 @@ export default function AboutUs() {
           </h2>
           <div className="relative flex flex-col gap-8 md:gap-12">
             {[
-              { year: "2010", event: "Founded in Houston, Texas" },
-              { year: "2015", event: "Expanded to Kenya" },
+              { year: "2010", event: "Founded in Nairobi, Kenya" },
+              { year: "2015", event: "Expanded ..." },
               { year: "2020", event: "Launched First Healthcare Project" },
             ].map((item, index) => (
               <motion.div
@@ -88,13 +88,13 @@ export default function AboutUs() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { name: "John Doe", role: "CEO", bio: "Leads strategic vision." },
+              { name: "...", role: "CEO", bio: "Leads strategic vision." },
               {
-                name: "Jane Smith",
+                name: "...",
                 role: "CFO",
                 bio: "Manages financial growth.",
               },
-              { name: "Ali Hassan", role: "COO", bio: "Oversees operations." },
+              { name: "...", role: "COO", bio: "Oversees operations." },
             ].map((member, index) => (
               <motion.div
                 key={index}
