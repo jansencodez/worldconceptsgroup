@@ -60,6 +60,7 @@ const Navbar = () => {
     "About",
     "Services",
     "Projects",
+    "Investments",
     "Partnerships",
     "Opportunities",
     "BOT Program",
