@@ -1,4 +1,5 @@
-// Updated SectorChart.tsx
+/* eslint-disable @typescript-eslint/no-explicit-any */
+// @/components/charts/Charts.tsx
 "use client";
 
 import {
@@ -12,7 +13,7 @@ import {
   ArcElement,
 } from "chart.js";
 import { Bar, Pie } from "react-chartjs-2";
-import { useWindowSize } from "@/hooks/useWindowSize"; // Create this hook
+import { useWindowSize } from "@/hooks/useWindowSize";
 
 ChartJS.register(
   CategoryScale,
@@ -40,43 +41,55 @@ export const SectorInvestmentsBarChart = ({
   const { width } = useWindowSize();
   const isMobile = width < 768;
 
+  const parseInvestment = (investment: string): number => {
+    const match = investment.match(/Ksh([\d.]+)M/);
+    return match ? parseFloat(match[1]) : 0;
+  };
+
   const data = {
     labels: sectors.map((sector) => sector.title),
     datasets: [
       {
-        label: "Total Investments",
+        label: "Total Investments (Ksh Millions)",
         data: sectors.map((sector) =>
-          parseFloat(sector.stats.investments.replace("$", "").replace("B", ""))
+          parseInvestment(sector.stats.investments)
         ),
         backgroundColor: "#4f46e5",
         borderColor: "#4f46e5",
         borderWidth: 1,
-        barThickness: isMobile ? 20 : 40, // Adjust based on screen size
-        categoryPercentage: 0.8, // Use more space for bars
+        barThickness: isMobile ? 20 : 40,
+        categoryPercentage: 0.8,
       },
     ],
   };
 
   const options = {
-    indexAxis: isMobile ? ("y" as const) : ("x" as const), // Horizontal on mobile
+    indexAxis: isMobile ? ("y" as const) : ("x" as const),
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
       legend: {
         position: "top" as const,
-        labels: { font: { size: isMobile ? 12 : 14, family: "'Inter', sans-serif" } },
+        labels: {
+          font: { size: isMobile ? 12 : 14, family: "'Inter', sans-serif" },
+        },
       },
       title: {
         display: true,
         text: "Sector Investment Distribution",
         font: { size: isMobile ? 16 : 18 },
       },
+      tooltip: {
+        callbacks: {
+          label: (context: any) => `Ksh ${context.raw}M`,
+        },
+      },
     },
     scales: {
       x: {
         title: {
           display: !isMobile,
-          text: "Billions (USD)",
+          text: "Ksh (Millions)",
           font: { size: isMobile ? 12 : 14 },
         },
         ticks: { font: { size: isMobile ? 10 : 12 } },
@@ -89,7 +102,7 @@ export const SectorInvestmentsBarChart = ({
         },
         ticks: {
           font: { size: isMobile ? 10 : 12 },
-          autoSkip: false, // Show all labels
+          autoSkip: false,
         },
       },
     },
@@ -97,8 +110,6 @@ export const SectorInvestmentsBarChart = ({
 
   return (
     <div className="h-[300px] sm:h-[400px]">
-      {" "}
-      {/* Responsive container */}
       <Bar data={data} options={options} />
     </div>
   );
