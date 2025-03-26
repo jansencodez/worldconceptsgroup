@@ -27,6 +27,17 @@ const pulse = {
   },
 };
 
+const dotPulse = {
+  animate: {
+    scale: [1, 1.5, 1],
+    transition: {
+      duration: 2,
+      repeat: Infinity,
+      ease: "easeInOut",
+    },
+  },
+};
+
 // Home Component
 export default function Home() {
   const router = useRouter();
@@ -56,8 +67,6 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-slate-50 relative overflow-hidden">
       <div className="absolute inset-0 z-0 opacity-10 pointer-events-none">
-        <div className="absolute -top-20 -left-40 w-[300px] h-[300px] md:w-[500px] md:h-[500px] lg:w-[800px] lg:h-[800px] bg-gradient-to-r from-indigo-200/40 to-cyan-200/40 rounded-full blur-3xl animate-rotate" />
-        <div className="absolute -top-40 -right-40 w-[250px] h-[250px] md:w-[400px] md:h-[400px] lg:w-[700px] lg:h-[700px] bg-gradient-to-r from-purple-200/30 to-pink-200/30 rounded-full blur-3xl animate-rotate delay-1000" />
         <div className="absolute inset-0 z-[6] opacity-100 pointer-events-none">
           <svg
             width="100%"
@@ -160,7 +169,7 @@ export default function Home() {
           </svg>
           <motion.div
             className="absolute w-2 h-2 bg-indigo-500 rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-            variants={pulse}
+            variants={dotPulse}
             animate="animate"
           />
         </motion.div>
@@ -184,7 +193,7 @@ export default function Home() {
             </span>
             <motion.span
               className="absolute -top-2 -right-2 w-3 h-3 bg-cyan-400 rounded-full"
-              variants={pulse}
+              variants={dotPulse}
               animate="animate"
             />
           </motion.h2>
@@ -226,7 +235,7 @@ export default function Home() {
             >
               Explore Investments
               <motion.span
-                className="absolute -inset-1 rounded-lg md:rounded-xl border border-indigo-400/50"
+                className="absolute inset-0 rounded-lg md:rounded-xl border-4 border-indigo-400/50"
                 variants={pulse}
                 animate="animate"
               />
@@ -238,7 +247,7 @@ export default function Home() {
             >
               Get in Touch
               <motion.span
-                className="absolute -inset-1 rounded-lg md:rounded-xl border border-indigo-400/50"
+                className="absolute inset-0 rounded-lg md:rounded-xl border-4 border-indigo-400/50"
                 variants={pulse}
                 animate="animate"
               />
@@ -270,7 +279,7 @@ export default function Home() {
               />
               <motion.div
                 className="absolute -top-2 -left-2 w-4 h-4 bg-cyan-500 rounded-full"
-                variants={pulse}
+                variants={dotPulse}
                 animate="animate"
               />
             </motion.div>
@@ -282,7 +291,7 @@ export default function Home() {
                 About World Concepts Group
                 <motion.span
                   className="absolute -top-2 -right-2 w-3 h-3 bg-indigo-400 rounded-full"
-                  variants={pulse}
+                  variants={dotPulse}
                   animate="animate"
                 />
               </motion.h3>
@@ -302,7 +311,7 @@ export default function Home() {
                 >
                   Learn More
                   <motion.span
-                    className="absolute -inset-1 rounded-lg md:rounded-xl border border-cyan-400/50"
+                    className="absolute inset-0 rounded-lg md:rounded-xl border-4 border-cyan-400/50"
                     variants={pulse}
                     animate="animate"
                   />
@@ -319,7 +328,7 @@ export default function Home() {
         variants={staggerContainer(0.2)}
         initial="hidden"
         animate={isInvestmentsInView ? "show" : "hidden"}
-        className="py-12 md:py-20 px-4 md:px-8 lg:px-16 relative z-10"
+        className="py-12 md:py-20 px-4 md:px-8 lg:px-16 z-10"
       >
         <div className="max-w-7xl mx-auto">
           <motion.h3
@@ -329,7 +338,7 @@ export default function Home() {
             Our Strategic Investments
             <motion.span
               className="absolute -top-2 -right-2 w-3 h-3 bg-indigo-500 rounded-full"
-              variants={pulse}
+              variants={dotPulse}
               animate="animate"
             />
           </motion.h3>
@@ -338,7 +347,7 @@ export default function Home() {
               <motion.div
                 key={index}
                 variants={fadeIn("up", "tween", 0.2 + index * 0.1, 1)}
-                className="card card-orbit"
+                className="card card-orbit relative overflow-hidden"
               >
                 <div className="card-body">
                   <div className="flex items-center space-x-4 mb-4">
@@ -426,7 +435,7 @@ export default function Home() {
                 className="rounded-xl shadow-lg object-cover w-full h-auto"
               />
               <motion.div
-                className="absolute inset-0 border-2 border-cyan-400/50 rounded-xl"
+                className="absolute inset-0 border-2 border-cyan-400/50 rounded-xl animate-pulse"
                 variants={pulse}
                 animate="animate"
               />
@@ -439,7 +448,7 @@ export default function Home() {
                 Build Operate Transfer (BOT) Program
                 <motion.span
                   className="absolute -top-2 -right-2 w-3 h-3 bg-cyan-500 rounded-full"
-                  variants={pulse}
+                  variants={dotPulse}
                   animate="animate"
                 />
               </motion.h3>
@@ -458,7 +467,7 @@ export default function Home() {
                 >
                   Discover BOT
                   <motion.span
-                    className="absolute -inset-1 rounded-lg md:rounded-xl border border-cyan-400/50"
+                    className="absolute inset-0 rounded-lg md:rounded-xl border-4 border-cyan-400/50"
                     variants={pulse}
                     animate="animate"
                   />
@@ -485,7 +494,7 @@ export default function Home() {
             Investment Opportunities
             <motion.span
               className="absolute -top-2 -right-2 w-3 h-3 bg-indigo-500 rounded-full"
-              variants={pulse}
+              variants={dotPulse}
               animate="animate"
             />
           </motion.h3>
@@ -507,7 +516,7 @@ export default function Home() {
             >
               For Individuals
               <motion.span
-                className="absolute -inset-1 rounded-lg md:rounded-xl border border-indigo-400/50"
+                className="absolute inset-0 rounded-lg md:rounded-xl border-4 border-indigo-400/50"
                 variants={pulse}
                 animate="animate"
               />
@@ -519,7 +528,7 @@ export default function Home() {
             >
               For Fixed Income
               <motion.span
-                className="absolute -inset-1 rounded-lg md:rounded-xl border border-indigo-400/50"
+                className="absolute inset-0 rounded-lg md:rounded-xl border-4 border-indigo-400/50"
                 variants={pulse}
                 animate="animate"
               />
@@ -542,7 +551,7 @@ export default function Home() {
               Shape East & Central Africa’s Future
               <motion.span
                 className="absolute -top-2 -right-2 w-4 h-4 bg-indigo-500 rounded-full opacity-50"
-                variants={pulse}
+                variants={dotPulse}
                 animate="animate"
               />
             </h2>
@@ -567,7 +576,7 @@ export default function Home() {
               >
                 Get Started
                 <motion.span
-                  className="absolute -inset-1 rounded-lg md:rounded-xl border border-indigo-400/50"
+                  className="absolute inset-0 rounded-lg md:rounded-xl border-4 border-indigo-400/50"
                   variants={pulse}
                   animate="animate"
                 />
