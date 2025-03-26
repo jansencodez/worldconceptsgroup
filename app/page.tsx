@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { motion, useInView } from "framer-motion";
-import { fadeIn, staggerContainer, zoomIn } from "@/utils/motion";
+import { fadeIn, staggerContainer } from "@/utils/motion"; // Remove zoomIn
 import Button from "@/components/ui/button";
 import Image from "next/image";
 import {
@@ -126,7 +126,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Hero Section with Image */}
+      {/* Hero Section with Image Overlay */}
       <motion.header
         ref={heroRef}
         variants={staggerContainer(0.3)}
@@ -203,30 +203,31 @@ export default function Home() {
             className="text-sm md:text-base text-slate-500 mb-6 md:mb-8 max-w-2xl mx-auto"
           >
             World Concepts Group manages Ksh 300M across 7 East and Central
-            African nations, focusing on healthcare, real estate, agritech, and
-            more with 6 active projects.
+            African nations.
           </motion.p>
 
           <motion.div
-            variants={zoomIn(0.5, 1)}
-            className="mb-6 md:mb-8 max-w-3xl mx-auto relative"
+            variants={fadeIn("up", "tween", 0.5, 1)}
+            className="mb-6 md:mb-8 w-full image-overlay"
           >
             <Image
               src="/images/hero-africa-growth.jpg"
               alt="Africa’s Growth Landscape"
               width={800}
               height={400}
-              className="rounded-xl shadow-lg object-cover"
+              className="rounded-xl object-cover w-full"
             />
-            <motion.div
-              className="absolute inset-0 border-2 border-indigo-400/50 rounded-xl"
-              variants={pulse}
-              animate="animate"
-            />
+            <div className="image-overlay-content">
+              <h3 className="image-overlay-title">Africa’s Growth Landscape</h3>
+              <p className="image-overlay-excerpt">
+                Focusing on healthcare, real estate, agritech, and more with 6
+                active projects.
+              </p>
+            </div>
           </motion.div>
 
           <motion.div
-            variants={fadeIn("up", "tween", 0.5, 0.25)}
+            variants={fadeIn("up", "tween", 0.6, 1)}
             className="flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center"
           >
             <Button
@@ -256,7 +257,7 @@ export default function Home() {
         </div>
       </motion.header>
 
-      {/* About Section */}
+      {/* About Section with Image Overlay */}
       <motion.section
         ref={aboutRef}
         variants={staggerContainer(0.2)}
@@ -268,15 +269,21 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center">
             <motion.div
               variants={fadeIn("right", "tween", 0.2, 1)}
-              className="relative"
+              className="image-overlay relative"
             >
               <Image
                 src="/images/about-team.jpg"
                 alt="World Concepts Team"
                 width={500}
                 height={300}
-                className="rounded-xl shadow-lg object-cover w-full h-auto"
+                className="rounded-xl object-cover w-full h-auto"
               />
+              <div className="image-overlay-content">
+                <h3 className="image-overlay-title">Our Team</h3>
+                <p className="image-overlay-excerpt">
+                  Driving economic growth across East and Central Africa.
+                </p>
+              </div>
               <motion.div
                 className="absolute -top-2 -left-2 w-4 h-4 bg-cyan-500 rounded-full"
                 variants={dotPulse}
@@ -347,6 +354,7 @@ export default function Home() {
               <motion.div
                 key={index}
                 variants={fadeIn("up", "tween", 0.2 + index * 0.1, 1)}
+                whileHover={{ scale: 1.02 }}
                 className="card card-orbit relative overflow-hidden"
               >
                 <div className="card-body">
@@ -413,7 +421,7 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* BOT Program Section with Image */}
+      {/* BOT Program Section with Image Overlay */}
       <motion.section
         ref={botRef}
         variants={staggerContainer(0.2)}
@@ -425,18 +433,24 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center">
             <motion.div
               variants={fadeIn("right", "tween", 0.2, 1)}
-              className="relative"
+              className="image-overlay relative"
             >
               <Image
                 src="/images/bot-program.jpg"
                 alt="BOT Program Illustration"
                 width={500}
                 height={300}
-                className="rounded-xl shadow-lg object-cover w-full h-auto"
+                className="rounded-xl object-cover w-full h-auto"
               />
+              <div className="image-overlay-content">
+                <h3 className="image-overlay-title">BOT Program</h3>
+                <p className="image-overlay-excerpt">
+                  6 active projects across 7 nations.
+                </p>
+              </div>
               <motion.div
-                className="absolute inset-0 border-2 border-cyan-400/50 rounded-xl animate-pulse"
-                variants={pulse}
+                className="absolute -top-2 -left-2 w-4 h-4 bg-cyan-500 rounded-full"
+                variants={dotPulse}
                 animate="animate"
               />
             </motion.div>
@@ -456,9 +470,8 @@ export default function Home() {
                 variants={fadeIn("up", "tween", 0.3, 1)}
                 className="text-sm md:text-base text-slate-600 mb-6 md:mb-8 max-w-md mx-auto md:mx-0"
               >
-                Our BOT Program delivers 6 active projects across 7 nations,
-                from innovative infrastructure to efficient operations and
-                seamless transitions.
+                Our BOT Program delivers innovative infrastructure and efficient
+                operations across East and Central Africa.
               </motion.p>
               <motion.div variants={fadeIn("up", "tween", 0.4, 1)}>
                 <Button
@@ -537,7 +550,7 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* Contact Section with Wave SVG */}
+      {/* Contact Section */}
       <motion.section
         ref={contactRef}
         variants={fadeIn("up", "tween", 0.3, 1)}
