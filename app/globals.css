@@ -294,3 +294,31 @@ body {
   height: 1.5rem;
   color: #64748b;
 }
+
+/* Glowing button effect */
+.glow-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.glow-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3), transparent);
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s ease;
+  z-index: 0;
+}
+
+.glow-button:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.glow-button span {
+  position: relative;
+  z-index: 1;
+}
