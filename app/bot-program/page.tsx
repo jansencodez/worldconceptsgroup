@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer, zoomIn } from "@/utils/motion";
 import Button from "@/components/ui/button";
+import Link from "next/link";
 
 export default function BOTProgram() {
   const router = useRouter();
@@ -185,7 +186,7 @@ export default function BOTProgram() {
             Contact us at{" "}
             <Link href="tel:+254700483333" className="underline">
               +254 700 483333
-            </a>{" "}
+            </Link>{" "}
             to discuss how our BOT Program can bring your vision to life.
           </p>
           <motion.div

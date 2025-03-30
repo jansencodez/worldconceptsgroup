@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/utils/motion";
 import Button from "@/components/ui/button";
 import { FiGlobe, FiUsers, FiTarget } from "react-icons/fi";
+import Link from "next/link";
 
 export default function About() {
   const router = useRouter();
@@ -31,10 +32,7 @@ export default function About() {
   ];
 
   return (
-    <div
-      
-      className="min-h-screen bg-slate-50 relative overflow-hidden"
-    >
+    <motion.div className="min-h-screen bg-slate-50 relative overflow-hidden">
       {/* Enhanced Background */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute -top-20 -left-40 w-[300px] h-[300px] md:w-[500px] md:h-[500px] lg:w-[800px] lg:h-[800px] bg-gradient-to-r from-indigo-200/40 to-cyan-200/40 rounded-full blur-3xl animate-[pulse_8s_infinite]" />
@@ -229,7 +227,7 @@ export default function About() {
               className="underline hover:text-cyan-200 transition-colors"
             >
               +254 700 483333
-            </a>{" "}
+            </Link>{" "}
             to learn more.
           </p>
           <motion.div

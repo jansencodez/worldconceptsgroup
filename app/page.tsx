@@ -5,6 +5,7 @@ import { motion, useInView } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/utils/motion"; // Remove zoomIn
 import Button from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 import {
   FiHeart,
   FiHome,
@@ -394,7 +395,7 @@ export default function Home() {
                       }}
                     >
                       Explore More
-                    </a>
+                    </Link>
                     {sector.title === "Healthcare" && (
                       <FiHeart className="card-icon" />
                     )}
@@ -575,7 +576,7 @@ export default function Home() {
                 className="text-indigo-600 underline hover:text-indigo-700"
               >
                 +254 700 483333
-              </a>{" "}
+              </Link>{" "}
               to collaborate on transformative projects across 7 nations.
             </p>
             <motion.div

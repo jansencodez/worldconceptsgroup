@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { fadeIn, staggerContainer } from "@/utils/motion";
 import Button from "@/components/ui/button";
+import Link from "next/link";
 import { FiMail, FiMapPin, FiPhone, FiAlertCircle } from "react-icons/fi";
 
 type FormData = {
@@ -283,7 +284,7 @@ export default function Contact() {
                   className="text-slate-600 mt-1 hover:text-indigo-700 transition-colors"
                 >
                   info@worldconcepts.com
-                </a>
+                </Link>
               </div>
             </div>
           </div>
