@@ -31,9 +31,8 @@ export default function About() {
   ];
 
   return (
-    <motion.div
-      initial="hidden"
-      animate="show"
+    <div
+      
       className="min-h-screen bg-slate-50 relative overflow-hidden"
     >
       {/* Enhanced Background */}
