@@ -11,6 +11,7 @@ import {
   FiGlobe,
   FiTruck,
   FiShoppingBag,
+  FiDollarSign,
 } from "react-icons/fi";
 
 export default function Projects() {
@@ -19,39 +20,67 @@ export default function Projects() {
 
   const projects = [
     {
-      title: "Nairobi Healthcare Hub",
+      title: "Nain Hospitals Expansion",
       sector: "Healthcare",
       status: "Current",
       description:
-        "A state-of-the-art hospital improving access in East Africa.",
+        "Expanding to 8 regional hospitals with advanced diagnostics and 350 beds.",
       icon: <FiHeart className="w-8 h-8 md:w-10 md:h-10 text-white" />,
     },
     {
-      title: "Kigali Residential Complex",
+      title: "Mulembe Africa Real Estate",
       sector: "Real Estate",
-      status: "Past",
-      description: "Sustainable housing for Rwanda’s growing urban population.",
+      status: "Current",
+      description:
+        "Smart cities and affordable housing on 10 acres of prime land.",
       icon: <FiHome className="w-8 h-8 md:w-10 md:h-10 text-white" />,
     },
     {
-      title: "AgriTech Farming Initiative",
+      title: "Agricultural Technology Initiative",
       sector: "Agriculture",
       status: "Current",
-      description: "Modern farming solutions boosting food security in Kenya.",
+      description:
+        "Tech-driven mushroom, meat, onion, and tomato farming for export.",
       icon: <FiGlobe className="w-8 h-8 md:w-10 md:h-10 text-white" />,
     },
     {
-      title: "Mombasa Transport Network",
-      sector: "Transport",
+      title: "Mobile Clinic Network",
+      sector: "Healthcare",
       status: "Current",
-      description: "Enhanced logistics and road infrastructure for trade.",
+      description:
+        "Deploying mobile clinics with labs, pharmacies, and telemedicine.",
       icon: <FiTruck className="w-8 h-8 md:w-10 md:h-10 text-white" />,
     },
     {
-      title: "Dar es Salaam Retail Center",
+      title: "Nyumbani Deport & Tissian Africa",
+      sector: "Consumer Markets",
+      status: "Current",
+      description:
+        "Grocery delivery and fast food services enhancing urban convenience.",
+      icon: <FiShoppingBag className="w-8 h-8 md:w-10 md:h-10 text-white" />,
+    },
+    {
+      title: "Manna Mat",
+      sector: "Consumer Markets",
+      status: "Current",
+      description:
+        "Mobile retail containers bringing essential goods to underserved areas.",
+      icon: <FiShoppingBag className="w-8 h-8 md:w-10 md:h-10 text-white" />,
+    },
+    {
+      title: "Mulembe Africa Microcredit",
+      sector: "Finance",
+      status: "Current",
+      description:
+        "Microcredit and digital banking for financial inclusion across Africa.",
+      icon: <FiDollarSign className="w-8 h-8 md:w-10 md:h-10 text-white" />,
+    },
+    {
+      title: "Community Empowerment Program",
       sector: "Consumer Markets",
       status: "Past",
-      description: "A modern retail hub catering to Tanzania’s consumers.",
+      description:
+        "Empowering rural entrepreneurs with Ksh 100,000 worth of goods.",
       icon: <FiShoppingBag className="w-8 h-8 md:w-10 md:h-10 text-white" />,
     },
   ];
@@ -60,6 +89,13 @@ export default function Projects() {
     filter === "all"
       ? projects
       : projects.filter((p) => p.sector.toLowerCase() === filter.toLowerCase());
+
+  const normalizeSlug = (title: string) => {
+    return title
+      .toLowerCase()
+      .replace(/\s+/g, "-") // Replace spaces with hyphens
+      .replace(/&/g, "-and-"); // Replace & with -and-
+  };
 
   return (
     <motion.div
@@ -96,8 +132,8 @@ export default function Projects() {
           variants={fadeIn("up", "tween", 0.4, 1)}
           className="text-sm md:text-base text-slate-500 max-w-2xl mx-auto mb-6 md:mb-8"
         >
-          Discover how we’re driving sustainable development across Africa’s key
-          sectors.
+          Explore our innovative initiatives driving sustainable growth across
+          Africa’s key sectors.
         </motion.p>
       </motion.section>
 
@@ -112,7 +148,7 @@ export default function Projects() {
             "Healthcare",
             "Real Estate",
             "Agriculture",
-            "Transport",
+            "Finance",
             "Consumer Markets",
           ].map((f) => (
             <button
@@ -171,11 +207,7 @@ export default function Projects() {
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
-                      router.push(
-                        `/projects/${project.title
-                          .toLowerCase()
-                          .replace(/\s+/g, "-")}`
-                      );
+                      router.push(`/projects/${normalizeSlug(project.title)}`);
                     }}
                     className="flex items-center text-indigo-600 hover:text-indigo-700 transition-colors duration-200 text-xs md:text-sm font-medium"
                   >

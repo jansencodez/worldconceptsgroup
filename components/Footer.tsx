@@ -5,7 +5,7 @@ function Footer() {
   return (
     <footer className="bg-gradient-to-br from-indigo-900 to-blue-900 text-slate-100">
       <div className="max-w-7xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-b border-white/10 pb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-b border-white/10 pb-12">
           {/* Company Info */}
           <div className="space-y-4">
             <h3 className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
@@ -18,7 +18,7 @@ function Footer() {
           </div>
 
           {/* Solutions */}
-          <div className="space-y-4">
+          {/* <div className="space-y-4">
             <h4 className="text-sm font-semibold uppercase tracking-wider text-slate-300">
               Solutions
             </h4>
@@ -34,7 +34,7 @@ function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </div> */}
 
           {/* Legal */}
           <div className="space-y-4">

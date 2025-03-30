@@ -30,7 +30,7 @@ export const sectors: Sector[] = [
       projects: "2",
       countries: "7 Nations",
     },
-    initiatives: ["Regional specialty hospitals", "Mobile health units"],
+    initiatives: ["Nain Hospitals Expansion", "Mobile Clinic Network"],
   },
   {
     id: "real-estate",
@@ -44,7 +44,7 @@ export const sectors: Sector[] = [
       projects: "1",
       countries: "7 Nations",
     },
-    initiatives: ["Mixed-use developments"],
+    initiatives: ["Mulembe Africa Real Estate"],
   },
   {
     id: "agritech",
@@ -58,7 +58,7 @@ export const sectors: Sector[] = [
       projects: "1",
       countries: "7 Nations",
     },
-    initiatives: ["Precision farming"],
+    initiatives: ["Agricultural Technology Initiative"],
   },
   {
     id: "consumer",
@@ -69,10 +69,14 @@ export const sectors: Sector[] = [
       "Transforming retail experiences across East and Central Africa with innovation.",
     stats: {
       investments: "Ksh40.9M",
-      projects: "1",
+      projects: "3",
       countries: "7 Nations",
     },
-    initiatives: ["E-commerce platforms"],
+    initiatives: [
+      "Nyumbani Deport & Tissian Africa",
+      "Manna Mat",
+      "Community Empowerment Program",
+    ],
   },
   {
     id: "finance",
@@ -86,6 +90,6 @@ export const sectors: Sector[] = [
       projects: "1",
       countries: "7 Nations",
     },
-    initiatives: ["Digital banking"],
+    initiatives: ["Mulembe Africa Microcredit"],
   },
 ];

@@ -44,31 +44,15 @@ const coreServices = [
     focus: [
       "Land leasing programs",
       "Sustainable farming",
-      "AgriTech solutions",
       "Food security networks",
     ],
   },
-  {
-    icon: <FiTruck className="w-6 h-6 md:w-8 md:h-8" />,
-    title: "Transport Infrastructure",
-    description: "Improving connectivity with advanced transport solutions.",
-    focus: [
-      "Road networks",
-      "Logistics hubs",
-      "Port enhancements",
-      "Air transport systems",
-    ],
-  },
+
   {
     icon: <FiShoppingBag className="w-6 h-6 md:w-8 md:h-8" />,
     title: "Consumer Markets",
     description: "Innovating retail and consumer goods for African markets.",
-    focus: [
-      "Modern retail spaces",
-      "Supply chain optimization",
-      "Consumer goods",
-      "Market insights",
-    ],
+    focus: ["Modern retail spaces", "Consumer goods", "Market insights"],
   },
   {
     icon: <FiUsers className="w-6 h-6 md:w-8 md:h-8" />,

@@ -2,8 +2,9 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { fadeIn, staggerContainer } from "@/utils/motion"; // Remove zoomIn for smoother effect
+import { fadeIn, staggerContainer } from "@/utils/motion";
 import Image from "next/image";
+import Masonry from "react-masonry-css";
 
 export default function Blog() {
   const [search, setSearch] = useState("");
@@ -22,6 +23,20 @@ export default function Blog() {
       image: "/images/realestate.jpg",
       tag: "Real Estate",
     },
+    {
+      title: "Agritech Innovations for Small Farmers",
+      excerpt:
+        "How IoT and data analytics are boosting agricultural productivity.",
+      image: "/images/agritech.jpg",
+      tag: "Agritech",
+    },
+    {
+      title: "The Rise of Digital Finance",
+      excerpt:
+        "Mobile banking and microcredit reshaping financial access in emerging markets.",
+      image: "/images/finance.jpg",
+      tag: "Finance",
+    },
   ];
 
   const filteredPosts = posts.filter(
@@ -30,19 +45,24 @@ export default function Blog() {
       post.excerpt.toLowerCase().includes(search.toLowerCase())
   );
 
+  const breakpointCols = {
+    default: 3,
+    1100: 3,
+    700: 2,
+    500: 2,
+  };
+
   return (
     <motion.div
       initial="hidden"
       animate="show"
       className="min-h-screen bg-gradient-to-br from-slate-50 to-gray-100 relative overflow-hidden"
     >
-      {/* Enhanced Background Glow */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute -top-32 -left-40 w-[300px] h-[300px] md:w-[500px] md:h-[500px] lg:w-[800px] lg:h-[800px] bg-gradient-to-r from-indigo-300/50 to-cyan-300/50 rounded-full blur-3xl animate-[pulse_8s_infinite]" />
         <div className="absolute bottom-10 right-10 w-[150px] h-[150px] md:w-[300px] md:h-[300px] bg-gradient-to-r from-indigo-300/50 to-cyan-300/50 rounded-full blur-2xl animate-[pulse_6s_infinite]" />
       </div>
 
-      {/* Hero Section */}
       <motion.section
         variants={fadeIn("up", "tween", 0.3, 1)}
         className="pt-24 md:pt-32 pb-12 md:pb-20 px-6 text-center relative z-10"
@@ -90,7 +110,6 @@ export default function Blog() {
         </motion.div>
       </motion.section>
 
-      {/* Search Input */}
       <motion.div
         variants={fadeIn("up", "tween", 0.4, 1)}
         className="px-6 pb-8 relative z-10"
@@ -106,41 +125,46 @@ export default function Blog() {
         </div>
       </motion.div>
 
-      {/* Blog Posts */}
       <motion.section
         variants={staggerContainer(0.1)}
         className="px-6 pb-20 relative z-10"
       >
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredPosts.length > 0 ? (
-            filteredPosts.map((post, index) => (
-              <motion.div
-                key={index}
-                variants={fadeIn("up", "tween", 0.2 + index * 0.1, 1)}
-                className="blog-card"
-              >
-                <Image
-                  src={post.image}
-                  alt={post.title}
-                  layout="fill"
-                  objectFit="cover"
-                  className="absolute inset-0"
-                />
-                <div className="blog-card-tag">{post.tag}</div>
-                <div className="blog-card-content">
-                  <h3 className="blog-card-title">{post.title}</h3>
-                  <p className="blog-card-excerpt">{post.excerpt}</p>
-                  <a href="#" className="blog-card-link">
-                    Read More →
-                  </a>
-                </div>
-              </motion.div>
-            ))
-          ) : (
-            <p className="text-center text-slate-600 col-span-full">
-              No posts found matching your search.
-            </p>
-          )}
+        <div className="max-w-7xl mx-auto">
+          <Masonry
+            breakpointCols={breakpointCols}
+            className="my-masonry-grid"
+            columnClassName="my-masonry-grid_column"
+          >
+            {filteredPosts.length > 0 ? (
+              filteredPosts.map((post, index) => (
+                <motion.div
+                  key={index}
+                  variants={fadeIn("up", "tween", 0.2 + index * 0.1, 1)}
+                  className="blog-card"
+                >
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    layout="fill"
+                    objectFit="cover"
+                    className="absolute inset-0"
+                  />
+                  <div className="blog-card-tag">{post.tag}</div>
+                  <div className="blog-card-content">
+                    <h3 className="blog-card-title">{post.title}</h3>
+                    <p className="blog-card-excerpt">{post.excerpt}</p>
+                    <a href="#" className="blog-card-link">
+                      Read More →
+                    </a>
+                  </div>
+                </motion.div>
+              ))
+            ) : (
+              <p className="text-center text-slate-600 w-full">
+                No posts found matching your search.
+              </p>
+            )}
+          </Masonry>
         </div>
       </motion.section>
     </motion.div>

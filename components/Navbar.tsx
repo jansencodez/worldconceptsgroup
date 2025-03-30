@@ -74,7 +74,7 @@ const Navbar = () => {
       items: [
         { name: "Projects", path: "/projects" },
         { name: "Investments", path: "/investments" },
-        { name: "Partnerships", path: "/partnerships" },
+        // { name: "Partnerships", path: "/partnerships" },
       ],
     },
     {
@@ -276,7 +276,6 @@ const Navbar = () => {
                     "Services",
                     "Projects",
                     "Investments",
-                    "Partnerships",
                     "Opportunities",
                     "BOT Program",
                     "Investor Relations",
