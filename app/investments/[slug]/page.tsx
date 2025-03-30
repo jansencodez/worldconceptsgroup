@@ -160,9 +160,6 @@ export default function SectorDetail() {
                   variants={fadeIn("up", "tween", 0.6 + index * 0.1, 1)}
                   className="bg-indigo-50/50 rounded-lg p-4"
                 >
-                  <h3 className="text-base md:text-lg font-semibold text-indigo-600 mb-2">
-                    {initiative}
-                  </h3>
                   <div className="text-sm md:text-base text-slate-600">
                     <ReactMarkdown>
                       {detail?.content || "No additional details available."}
