@@ -225,7 +225,7 @@ export default function About() {
           </h2>
           <p className="text-sm md:text-base mb-6 md:mb-8 max-w-2xl mx-auto">
             Partner with us to shape Africa’s future. Contact us at{" "}
-            <a
+            <Link
               href="tel:+254700483333"
               className="underline hover:text-cyan-200 transition-colors"
             >

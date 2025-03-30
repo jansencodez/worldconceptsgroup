@@ -278,7 +278,7 @@ export default function Contact() {
               </div>
               <div>
                 <p className="text-sm font-medium text-slate-800">Email</p>
-                <a
+                <Link
                   href="mailto:info@worldconcepts.com"
                   className="text-slate-600 mt-1 hover:text-indigo-700 transition-colors"
                 >

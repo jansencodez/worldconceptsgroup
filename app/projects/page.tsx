@@ -13,6 +13,7 @@ import {
   FiShoppingBag,
   FiDollarSign,
 } from "react-icons/fi";
+import Link from "next/link";
 
 export default function Projects() {
   const [filter, setFilter] = useState("all");
@@ -244,9 +245,9 @@ export default function Projects() {
           </h2>
           <p className="text-sm md:text-base mb-6 md:mb-8 max-w-2xl mx-auto">
             Interested in our projects? Contact us at{" "}
-            <a href="tel:+254700483333" className="underline">
+            <Link href="tel:+254700483333" className="underline">
               +254 700 483333
-            </a>{" "}
+            </Link>{" "}
             to explore collaboration opportunities.
           </p>
           <motion.div

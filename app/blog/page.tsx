@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/utils/motion";
 import Image from "next/image";
 import Masonry from "react-masonry-css";
+import Link from "next/link"
 
 export default function Blog() {
   const [search, setSearch] = useState("");
@@ -153,9 +154,9 @@ export default function Blog() {
                   <div className="blog-card-content">
                     <h3 className="blog-card-title">{post.title}</h3>
                     <p className="blog-card-excerpt">{post.excerpt}</p>
-                    <a href="#" className="blog-card-link">
+                    <Link href="#" className="blog-card-link">
                       Read More →
-                    </a>
+                    </Link>
                   </div>
                 </motion.div>
               ))

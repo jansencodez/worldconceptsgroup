@@ -12,6 +12,7 @@ import {
 } from "@/components/charts/Charts";
 import { sectors } from "@/data/sectors";
 import ReactMarkdown from "react-markdown";
+import Link from "next/link";
 
 interface Sector {
   id: string;
@@ -461,9 +462,9 @@ export default function Investments() {
           </h2>
           <p className="text-sm md:text-base mb-6 md:mb-8 max-w-2xl mx-auto">
             Join us to drive growth across 7 nations. Contact us at{" "}
-            <a href="tel:+254700483333" className="underline">
+            <Link href="tel:+254700483333" className="underline">
               +254 700 483333
-            </a>
+            </Link>
             .
           </p>
           <motion.div className="flex flex-col md:flex-row justify-center gap-4 md:gap-6">

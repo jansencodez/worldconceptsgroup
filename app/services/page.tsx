@@ -13,6 +13,7 @@ import {
   FiGlobe,
   FiUsers,
 } from "react-icons/fi";
+import Link from "next/link";
 
 const coreServices = [
   {
@@ -290,11 +291,11 @@ export default function Services() {
             Invest in Africa’s Growth
           </h2>
           <p className="text-sm md:text-base mb-6 md:mb-8 max-w-2xl mx-auto">
-            Partner with us for high-impact opportunities with returns of
+            Partner with us for %high-impact opportunities with returns of
             15%-21%. Call us at{" "}
-            <a href="tel:+254700483333" className="underline">
+            <Link href="tel:+254700483333" className="underline">
               +254 700 483333
-            </a>
+            </Link>
             .
           </p>
           <div className="grid sm:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">

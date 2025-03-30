@@ -183,7 +183,7 @@ export default function BOTProgram() {
           </h2>
           <p className="text-sm md:text-base mb-6 md:mb-8 max-w-2xl mx-auto">
             Contact us at{" "}
-            <a href="tel:+254700483333" className="underline">
+            <Link href="tel:+254700483333" className="underline">
               +254 700 483333
             </a>{" "}
             to discuss how our BOT Program can bring your vision to life.

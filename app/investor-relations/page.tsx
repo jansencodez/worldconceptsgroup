@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/utils/motion";
 import Button from "@/components/ui/button";
 import { FiDownload, FiMail, FiPhone } from "react-icons/fi";
+import Link from "next/link"
 
 export default function InvestorRelations() {
   const router = useRouter();
@@ -189,13 +190,13 @@ export default function InvestorRelations() {
                 Review our latest financial performance and strategic updates.
               </p>
             </div>
-            <a
+            <Link
               href="/annual-report-2024.pdf" // Replace with actual path
               download
               className="text-indigo-600 hover:text-indigo-700 transition-colors"
             >
               <FiDownload className="w-6 h-6" />
-            </a>
+            </Link>
           </div>
           <div className="bg-white rounded-xl md:rounded-2xl p-6 md:p-8 shadow-md border border-slate-100 flex items-center justify-between">
             <div>
@@ -206,13 +207,13 @@ export default function InvestorRelations() {
                 Explore our vision, strategy, and investment opportunities.
               </p>
             </div>
-            <a
+            <Link
               href="/prospectus.pdf" // Replace with actual path
               download
               className="text-indigo-600 hover:text-indigo-700 transition-colors"
             >
               <FiDownload className="w-6 h-6" />
-            </a>
+            </Link>
           </div>
         </div>
       </motion.section>
@@ -292,18 +293,18 @@ export default function InvestorRelations() {
             </form>
           )}
           <div className="mt-6 flex justify-center gap-4 text-sm md:text-base text-slate-600">
-            <a
+            <Link
               href="mailto:investors@worldconcepts.com"
               className="flex items-center hover:text-indigo-600"
             >
               <FiMail className="w-5 h-5 mr-2" /> investors@worldconcepts.com
-            </a>
-            <a
+            </Link>
+            <Link
               href="tel:+254700483333"
               className="flex items-center hover:text-indigo-600"
             >
               <FiPhone className="w-5 h-5 mr-2" /> +254 700 483333
-            </a>
+            </Link>
           </div>
         </div>
       </motion.section>

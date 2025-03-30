@@ -385,7 +385,7 @@ export default function Home() {
                 </div>
                 <div className="card-footer">
                   <div className="flex justify-between items-center">
-                    <a
+                    <Link
                       href="/investments"
                       className="card-link"
                       onClick={(e) => {
@@ -570,7 +570,7 @@ export default function Home() {
             </h2>
             <p className="text-sm md:text-base text-slate-700 mb-6 md:mb-8 max-w-2xl mx-auto">
               Contact us at{" "}
-              <a
+              <Link
                 href="tel:+254700483333"
                 className="text-indigo-600 underline hover:text-indigo-700"
               >

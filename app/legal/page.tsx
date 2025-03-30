@@ -4,6 +4,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/utils/motion";
+import Link from "next/link";
 
 export default function Legal() {
   const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
@@ -93,12 +94,12 @@ export default function Legal() {
                 </p>
                 <p className="mt-2">
                   For more details, contact us at{" "}
-                  <a
+                  <Link
                     href="mailto:legal@example.com"
                     className="text-indigo-600 hover:underline"
                   >
                     legal@example.com
-                  </a>
+                  </Link>
                   .
                 </p>
               </motion.div>
@@ -153,12 +154,12 @@ export default function Legal() {
                 </p>
                 <p className="mt-2">
                   Questions? Reach out at{" "}
-                  <a
+                  <Link
                     href="mailto:legal@worldconcepts.com"
                     className="text-indigo-600 hover:underline"
                   >
                     legal@example.com
-                  </a>
+                  </Link>
                   .
                 </p>
               </motion.div>
