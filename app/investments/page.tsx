@@ -25,7 +25,7 @@ interface Sector {
   initiativeDetails: { [key: string]: { title: string; content: string } };
 }
 
-export const updatedSectors: Sector[] = sectors.map((sector) => ({
+const updatedSectors: Sector[] = sectors.map((sector) => ({
   ...sector,
   initiativeDetails: {
     ...(sector.id === "healthcare" && {
@@ -487,3 +487,5 @@ export default function Investments() {
     </motion.div>
   );
 }
+
+export { updatedSectors };
