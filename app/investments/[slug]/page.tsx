@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/utils/motion";
 import Button from "@/components/ui/button";
 import ReactMarkdown from "react-markdown";
-import { updatedSectors } from "@/app/investments/page";
+import { updatedSectors } from "@/data/sectors";
 
 interface Sector {
   id: string;
