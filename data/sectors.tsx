@@ -84,8 +84,8 @@ export const sectors: Sector[] = [
       countries: "7 Nations",
     },
     initiatives: [
-      "Nyumbani Deport & Tissian Africa",
-      "Manna Mat",
+      "Nyumbani Deport & Tisana Africa",
+      "Mana Mat",
       "Community Empowerment Program",
     ],
   },
@@ -163,10 +163,10 @@ Implementing tech-driven farming across Kenya and neighboring countries.
       },
     }),
     ...(sector.id === "consumer" && {
-      "Nyumbani Deport & Tissian Africa": {
-        title: "Nyumbani Deport & Tissian Africa",
+      "Nyumbani Deport & Tisana Africa": {
+        title: "Nyumbani Deport & Tisan Africa",
         content: `
-### Nyumbani Deport & Tissian Africa
+### Nyumbani Deport & Tisan Africa
 Providing grocery delivery and fast food services in Tanzania and other nations.
 
 **Key Highlights**  
@@ -175,10 +175,10 @@ Providing grocery delivery and fast food services in Tanzania and other nations.
 - Expanding retail presence across East Africa
         `.trim(),
       },
-      "Manna Mat": {
-        title: "Manna Mat",
+      "Mana Mat": {
+        title: "Mana Mat",
         content: `
-### Manna Mat
+### Mana Mat
 Offering mobile retail containers to underserved areas across East and Central Africa.
 
 **Key Highlights**  

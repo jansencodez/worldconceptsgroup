@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/utils/motion";
 import Button from "@/components/ui/button";
 import { FiDownload, FiMail, FiPhone } from "react-icons/fi";
-import Link from "next/link"
+import Link from "next/link";
 
 export default function InvestorRelations() {
   const router = useRouter();
@@ -61,7 +61,7 @@ export default function InvestorRelations() {
           variants={fadeIn("up", "tween", 0.3, 1)}
           className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-800 mb-4 md:mb-6 leading-tight"
         >
-          Join World Concepts Group’s Growth Journey
+          Join World Concepts Ventures’ Growth Journey
         </motion.h1>
         <motion.p
           variants={fadeIn("up", "tween", 0.4, 1)}
@@ -85,7 +85,7 @@ export default function InvestorRelations() {
             { label: "Total Assets", value: "Ksh 300M", trend: "+18% YoY" },
             {
               label: "Active Projects",
-              value: "230+",
+              value: "8",
               trend: "Across 7 Nations",
             },
             { label: "Projected ROI", value: "15-21%", trend: "Annualized" },
@@ -112,7 +112,7 @@ export default function InvestorRelations() {
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 md:pb-20"
       >
         <h2 className="text-xl md:text-2xl font-semibold text-slate-800 mb-6 md:mb-8 text-center">
-          Investment Opportunities with World Concepts Group
+          Investment Opportunities with World Concepts Ventures
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           <div className="bg-white rounded-xl md:rounded-2xl p-6 md:p-8 shadow-md border border-slate-100">
@@ -120,10 +120,10 @@ export default function InvestorRelations() {
               For Individual Investors
             </h3>
             <p className="text-xs md:text-sm text-slate-600 mb-4">
-              World Concepts Group invites you to join as a venture shareholder
-              or investor, offering you the chance to be part of its exciting
-              growth journey. Become a valued partner in our expansion across
-              Africa, benefiting from our strategic position in emerging
+              World Concepts Ventures invites you to join as a venture
+              shareholder or investor, offering you the chance to be part of its
+              exciting growth journey. Become a valued partner in our expansion
+              across Africa, benefiting from our strategic position in emerging
               markets.
             </p>
             <Button
@@ -153,19 +153,19 @@ export default function InvestorRelations() {
             </Button>
           </div>
         </div>
-        <div className="mt-8 bg-gradient-to-br from-indigo-600 to-cyan-500 rounded-xl md:rounded-2xl p-6 md:p-8 text-white text-center">
+        <div className="mt-8 bg-gradient-to-br from-indigo-600 to-cyan-500 rounded-xl md:rounded-2xl p-6 md:p-8 text-white text-center flex flex-col">
           <h3 className="text-base md:text-lg font-semibold mb-4">
             High Returns Await
           </h3>
           <p className="text-xs md:text-sm mb-4 max-w-2xl mx-auto">
-            World Concepts Group is dedicated to delivering exceptional value,
-            with impressive returns of 15% to 21% on your investment. Whether
-            you seek short-term gains or long-term growth, secure your financial
-            future with us.
+            World Concepts Ventures is dedicated to delivering exceptional
+            value, with impressive returns of 15% to 21% on your investment.
+            Whether you seek short-term gains or long-term growth, secure your
+            financial future with us.
           </p>
           <Button
             onClick={() => router.push("/contact")}
-            className="bg-white text-indigo-600 hover:bg-indigo-50 px-4 py-2 md:px-6 md:py-3 rounded-lg md:rounded-xl text-xs md:text-sm"
+            className="bg-white text-indigo-600 hover:bg-indigo-50 px-4 py-2 md:px-6 md:py-3 rounded-lg md:rounded-xl text-xs md:text-sm self-center"
           >
             Get Started
           </Button>
@@ -316,7 +316,7 @@ export default function InvestorRelations() {
       >
         <div className="max-w-5xl mx-auto text-center px-4 sm:px-6">
           <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-4 md:mb-6">
-            Ready to Invest with World Concepts Group?
+            Ready to Invest with World Concepts Ventures?
           </h2>
           <p className="text-sm md:text-base mb-6 md:mb-8 max-w-2xl mx-auto">
             Take the next step toward financial growth. Schedule a consultation

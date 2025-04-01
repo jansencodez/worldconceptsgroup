@@ -53,7 +53,7 @@ export default function Projects() {
       icon: <FiTruck className="w-8 h-8 md:w-10 md:h-10 text-white" />,
     },
     {
-      title: "Nyumbani Deport & Tissian Africa",
+      title: "Nyumbani Deport & Tisan Africa",
       sector: "Consumer Markets",
       status: "Current",
       description:
@@ -61,7 +61,7 @@ export default function Projects() {
       icon: <FiShoppingBag className="w-8 h-8 md:w-10 md:h-10 text-white" />,
     },
     {
-      title: "Manna Mat",
+      title: "Mana Mat",
       sector: "Consumer Markets",
       status: "Current",
       description:

@@ -91,7 +91,7 @@ export default function About() {
             variants={fadeIn("up", "tween", 0.4, 1)}
             className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-800 mb-4 md:mb-6 leading-tight gradient-text"
           >
-            About World Concepts Group
+            About World Concepts Ventures
           </motion.h1>
           <motion.p
             variants={fadeIn("up", "tween", 0.5, 1)}
@@ -120,7 +120,7 @@ export default function About() {
             variants={fadeIn("up", "tween", 0.3, 1)}
             className="text-sm md:text-base text-slate-600 mb-6 md:mb-8 max-w-3xl mx-auto text-center"
           >
-            World Concepts Group is a subsidiary within a global consortium,
+            World Concepts Ventures is a subsidiary within a global consortium,
             tailored to meet Africa’s unique needs. We specialize in
             acquisitions, asset management, and investment strategies that
             foster economic development and sustainability across the continent.
@@ -182,7 +182,7 @@ export default function About() {
             className="bg-white rounded-xl md:rounded-2xl p-6 md:p-8 shadow-lg border-2 border-gradient-to-r from-indigo-100/50 to-cyan-100/50"
           >
             <p className="text-sm md:text-base text-slate-600 mb-4 md:mb-6">
-              Originally registered in Houston, Texas, World Concepts Group
+              Originally registered in Houston, Texas, World Concepts Ventures
               relocated its operations to Kenya to capitalize on Africa’s rapid
               population growth and economic potential. This strategic move
               positions us at the heart of emerging markets, enabling us to:

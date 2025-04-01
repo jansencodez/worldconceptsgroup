@@ -92,13 +92,13 @@ export default function ProjectDetail() {
       },
     },
     {
-      title: "Nyumbani Deport & Tissian Africa",
+      title: "Nyumbani Deport & Tisan Africa",
       sector: "Consumer Markets",
       status: "Current",
       icon: <FiShoppingBag className="w-12 h-12 text-white" />,
       details: {
         overview:
-          "Nyumbani Deport offers grocery delivery, while Tissian Africa provides fast food and coffee services, enhancing urban convenience.",
+          "Nyumbani Deport offers grocery delivery, while Tisan Africa provides fast food and coffee services, enhancing urban convenience.",
         features: [
           "Grocery delivery with a wide range of fresh products",
           "Fast food and specialty coffee with quick service",
@@ -110,13 +110,13 @@ export default function ProjectDetail() {
       },
     },
     {
-      title: "Manna Mat",
+      title: "Mana Mat",
       sector: "Consumer Markets",
       status: "Current",
       icon: <FiShoppingBag className="w-12 h-12 text-white" />,
       details: {
         overview:
-          "Manna Mat consists of small, mobile retail containers functioning as traveling shops, ensuring essential goods are accessible in various locations, particularly in areas with limited access to supermarkets.",
+          "Mana Mat consists of small, mobile retail containers functioning as traveling shops, ensuring essential goods are accessible in various locations, particularly in areas with limited access to supermarkets.",
         features: [
           "Portable container shops stationed based on demand",
           "Affordable pricing on everyday goods",

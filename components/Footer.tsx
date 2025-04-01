@@ -59,7 +59,7 @@ function Footer() {
         {/* Copyright */}
         <div className="pt-8 text-center text-slate-400 text-sm">
           <p>
-            © {new Date().getFullYear()} World Concepts Group. All rights
+            © {new Date().getFullYear()} World Concepts Ventures. All rights
             reserved.
           </p>
         </div>
