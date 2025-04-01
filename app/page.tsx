@@ -330,64 +330,89 @@ export default function Home() {
         variants={staggerContainer(0.2)}
         initial="hidden"
         animate={isInvestmentsInView ? "show" : "hidden"}
-        className="py-12 md:py-20 px-4 md:px-8 lg:px-16"
+        className="py-12 md:py-20 px-4 md:px-8 lg:px-16 z-10"
       >
         <div className="max-w-7xl mx-auto">
           <motion.h3
             variants={fadeIn("up", "tween", 0.2, 1)}
-            className="text-xl md:text-2xl lg:text-3xl font-bold text-slate-800 text-center mb-8 md:mb-12"
+            className="text-xl md:text-2xl lg:text-3xl font-bold text-slate-800 text-center mb-8 md:mb-12 relative"
           >
             Our Strategic Investments
+            <motion.span
+              className="absolute -top-2 -right-2 w-3 h-3 bg-indigo-500 rounded-full"
+              variants={dotPulse}
+              animate="animate"
+            />
           </motion.h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <motion.div variants={staggerContainer(0.1)} className="card-columns">
             {sectors.map((sector, index) => (
               <motion.div
                 key={index}
                 variants={fadeIn("up", "tween", 0.2 + index * 0.1, 1)}
                 whileHover={{ scale: 1.02 }}
-                className="bg-white rounded-xl p-6 shadow-md border border-slate-100"
+                className="card card-orbit relative overflow-hidden"
               >
-                <div className="flex items-center space-x-4 mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-indigo-600 to-cyan-500 rounded-lg flex items-center justify-center">
+                <div className="card-body">
+                  <div className="flex items-center space-x-4 mb-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-indigo-600 to-cyan-500 rounded-lg flex items-center justify-center">
+                      {sector.title === "Healthcare" && (
+                        <FiHeart className="w-6 h-6 text-white" />
+                      )}
+                      {sector.title === "Real Estate" && (
+                        <FiHome className="w-6 h-6 text-white" />
+                      )}
+                      {sector.title === "Agritech" && (
+                        <FiBarChart className="w-6 h-6 text-white" />
+                      )}
+                      {sector.title === "Consumer Markets" && (
+                        <FiShoppingBag className="w-6 h-6 text-white" />
+                      )}
+                      {sector.title === "Finance" && (
+                        <FiDollarSign className="w-6 h-6 text-white" />
+                      )}
+                      {sector.title === "Infrastructure" && (
+                        <HiOutlineCube className="w-6 h-6 text-white" />
+                      )}
+                    </div>
+                    <h5 className="card-title">{sector.title}</h5>
+                  </div>
+                  <p className="card-text">{sector.description}</p>
+                </div>
+                <div className="card-footer">
+                  <div className="flex justify-between items-center">
+                    <Link
+                      href="/investments"
+                      className="card-link"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        router.push("/investments");
+                      }}
+                    >
+                      Explore More
+                    </Link>
                     {sector.title === "Healthcare" && (
-                      <FiHeart className="w-6 h-6 text-white" />
+                      <FiHeart className="card-icon" />
                     )}
                     {sector.title === "Real Estate" && (
-                      <FiHome className="w-6 h-6 text-white" />
+                      <FiHome className="card-icon" />
                     )}
                     {sector.title === "Agritech" && (
-                      <FiBarChart className="w-6 h-6 text-white" />
+                      <FiBarChart className="card-icon" />
                     )}
                     {sector.title === "Consumer Markets" && (
-                      <FiShoppingBag className="w-6 h-6 text-white" />
+                      <FiShoppingBag className="card-icon" />
                     )}
                     {sector.title === "Finance" && (
-                      <FiDollarSign className="w-6 h-6 text-white" />
+                      <FiDollarSign className="card-icon" />
                     )}
                     {sector.title === "Infrastructure" && (
-                      <HiOutlineCube className="w-6 h-6 text-white" />
+                      <HiOutlineCube className="card-icon" />
                     )}
                   </div>
-                  <h5 className="text-lg font-semibold text-slate-800">
-                    {sector.title}
-                  </h5>
                 </div>
-                <p className="text-sm text-slate-600 mb-4">
-                  {sector.description}
-                </p>
-                <Link
-                  href="/investments"
-                  className="text-indigo-600 hover:underline text-sm"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    router.push("/investments");
-                  }}
-                >
-                  Explore More
-                </Link>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </motion.section>
 
