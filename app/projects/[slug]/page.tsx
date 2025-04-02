@@ -20,7 +20,7 @@ export default function ProjectDetail() {
 
   const projects = [
     {
-      title: "Nain Hospitals Expansion",
+      title: "Nain Renal and Dialysis Center",
       sector: "Healthcare",
       status: "Current",
       icon: <FiHeart className="w-12 h-12 text-white" />,

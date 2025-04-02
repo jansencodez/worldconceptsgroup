@@ -21,11 +21,11 @@ export default function Projects() {
 
   const projects = [
     {
-      title: "Nain Hospitals Expansion",
+      title: "Nain Renal and Dialysis Center",
       sector: "Healthcare",
       status: "Current",
       description:
-        "Expanding to 8 regional hospitals with advanced diagnostics and 350 beds.",
+        "Expanding to 8 regional satellite hospitals with advanced diagnostics and 350 beds.",
       icon: <FiHeart className="w-8 h-8 md:w-10 md:h-10 text-white" />,
     },
     {
